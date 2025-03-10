@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WanderSafe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'teal-dark': '#1A4341',
+                        'gray-medium': '#A2A2A2',
+                        'orange-brand': '#FF7A40'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .bg-transparent-gray {
+            background-color: rgba(162, 162, 162, 0.25);
+        }
+    </style>
+</head>
+<body class="bg-teal-dark min-h-screen">
+    <div class="container mx-auto p-4">
+        <!-- Header with search -->
+        <div class="bg-transparent-gray rounded-full p-3 flex items-center mb-4">
+            <div class="bg-gray-200 rounded-full px-4 py-2 mr-4">
+                <span class="font-bold text-black uppercase tracking-widest">WANDERSAFE</span>
+            </div>
+            <div class="relative flex-grow">
+                <input type="text" class="w-full bg-transparent border border-orange-brand rounded-full py-2 px-4 text-white placeholder-gray-400" placeholder="Search">
+                <button class="absolute left-3 top-2 text-orange-brand">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </button>
+            </div>
+            <div class="ml-4 flex items-center">
+                <button class="text-orange-brand mx-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                </button>
+                <div class="w-10 h-10 bg-orange-brand rounded-full overflow-hidden">
+                    <img src="/api/placeholder/40/40" alt="Profile" class="w-full h-full object-cover" />
+                </div>
+            </div>
+        </div>
+
+        <!-- Main content -->
+        <div class="flex">
+            <!-- Sidebar -->
+            <div class="w-64 pr-4">
+                <nav class="mb-8">
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="#" class="flex items-center text-white hover:text-orange-brand">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home mr-3 text-orange-brand"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                                <span class="text-lg">Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center text-white hover:text-orange-brand">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-flag mr-3 text-orange-brand"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg>
+                                <span class="text-lg">Destination</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center text-white hover:text-orange-brand">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-flame mr-3 text-orange-brand"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg>
+                                <span class="text-lg">Popular</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center text-white hover:text-orange-brand">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-compass mr-3 text-orange-brand"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+                                <span class="text-lg">Explore</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="mt-6">
+                    <h3 class="text-white text-xl mb-4">Recent</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full overflow-hidden mr-3">
+                                <img src="/api/placeholder/48/48" alt="User" class="w-full h-full object-cover" />
+                            </div>
+                            <div>
+                                <p class="text-white text-sm">Traveling to Chennai this weekend, is it safe?</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full overflow-hidden mr-3">
+                                <img src="/api/placeholder/48/48" alt="User" class="w-full h-full object-cover" />
+                            </div>
+                            <div>
+                                <p class="text-white text-sm">Best way to get around Mumbai?</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full overflow-hidden mr-3">
+                                <img src="/api/placeholder/48/48" alt="User" class="w-full h-full object-cover" />
+                            </div>
+                            <div>
+                                <p class="text-white text-sm">Say Goodbye to Overpriced Airport Food! Kolkata ...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Center content -->
+            <div class="flex-grow bg-transparent-gray rounded-lg p-6 mx-4">
+                <div>
+                    <h2 class="text-white text-2xl mb-6">Create</h2>
+                    <div class="mb-4">
+                        <span class="inline-block bg-transparent border border-orange-brand text-white rounded-full px-4 py-1 text-sm">/Chennai</span>
+                    </div>
+                    <div class="mb-4">
+                        <input type="text" placeholder="Title *" class="w-full bg-transparent border border-orange-brand rounded-full py-3 px-4 text-white">
+                    </div>
+                    <div>
+                        <textarea placeholder="Body *" class="w-full bg-transparent border border-orange-brand rounded-2xl py-3 px-4 text-white h-40"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right sidebar - Popular destinations -->
+            <div class="w-64 pl-4">
+                <h3 class="text-white text-xl border-b border-orange-brand pb-2 mb-4 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin mr-2 text-orange-brand"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    Popular Destination
+                </h3>
+                <ul class="space-y-4">
+                    <li class="flex items-center">
+                        <div class="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
+                        <span class="text-white">Mumbai</span>
+                    </li>
+                    <li class="flex items-center">
+                        <div class="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
+                        <span class="text-white">Chennai</span>
+                    </li>
+                    <li class="flex items-center">
+                        <div class="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
+                        <span class="text-white">Kolkata</span>
+                    </li>
+                    <li class="flex items-center">
+                        <div class="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
+                        <span class="text-white">Delhi</span>
+                    </li>
+                    <li class="flex items-center">
+                        <div class="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
+                        <span class="text-white">Hyderabad</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create and Filter buttons -->
+    <div class="fixed bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-4">
+        <button class="bg-orange-brand text-white rounded-full px-4 py-2 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus mr-2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            Create
+        </button>
+        <button class="bg-gray-700 text-white rounded-full px-4 py-2 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sliders mr-2"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg>
+            Filter
+        </button>
+    </div>
+</body>
+</html>
